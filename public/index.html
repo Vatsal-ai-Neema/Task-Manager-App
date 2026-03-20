@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Bidyut Placement Drive</p>
+        <h1>Simple Task Manager</h1>
+        <p class="subtext">
+          Create, update, complete, and remove tasks with a clean full-stack
+          UI.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Add a Task</h2>
+          <p>Basic validation included: title and description cannot be empty.</p>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <input type="hidden" id="task-id" />
+
+          <label>
+            <span>Title</span>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              maxlength="100"
+              required
+              placeholder="Enter a short task title"
+            />
+          </label>
+
+          <label>
+            <span>Description</span>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              maxlength="300"
+              required
+              placeholder="Add a short description"
+            ></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-button">Add Task</button>
+            <button type="button" id="cancel-button" class="secondary hidden">
+              Cancel Edit
+            </button>
+          </div>
+          <p id="form-message" class="form-message"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header task-toolbar">
+          <div>
+            <h2>Your Tasks</h2>
+            <p id="task-summary">Loading tasks...</p>
+          </div>
+          <div class="filters" id="filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="pending">Pending</button>
+            <button class="filter-button" data-filter="completed">Completed</button>
+          </div>
+        </div>
+
+        <div id="error-banner" class="error-banner hidden"></div>
+        <div id="task-list" class="task-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>

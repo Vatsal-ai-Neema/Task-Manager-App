@@ -1,0 +1,271 @@
+:root {
+  --bg: #f4efe7;
+  --panel: #fffdf9;
+  --panel-border: #e4d8c8;
+  --ink: #1c1917;
+  --muted: #6b6258;
+  --accent: #b45309;
+  --accent-dark: #92400e;
+  --accent-soft: #fef3c7;
+  --success: #166534;
+  --danger: #b91c1c;
+  --shadow: 0 18px 50px rgba(28, 25, 23, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top left, rgba(180, 83, 9, 0.12), transparent 28%),
+    linear-gradient(180deg, #fcf8f1 0%, var(--bg) 100%);
+  color: var(--ink);
+}
+
+.app-shell {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.hero-card,
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 32px;
+  margin-bottom: 20px;
+}
+
+.hero-card h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.subtext,
+.panel-header p,
+#task-summary {
+  color: var(--muted);
+}
+
+.panel {
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.panel-header {
+  margin-bottom: 16px;
+}
+
+.panel-header h2 {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+}
+
+.task-form,
+.task-list {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d8cab7;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid rgba(180, 83, 9, 0.25);
+  border-color: var(--accent);
+}
+
+.form-actions,
+.task-toolbar,
+.filters,
+.task-card-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-dark);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+button.secondary {
+  background: #e7dccf;
+  color: var(--ink);
+}
+
+button.secondary:hover {
+  background: #ddd0bf;
+}
+
+.filter-button {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #d6c7b2;
+}
+
+.filter-button.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.task-card {
+  border: 1px solid #eadfce;
+  border-radius: 18px;
+  padding: 18px;
+  background: #fffdfa;
+}
+
+.task-card.completed {
+  background: #f3fbf5;
+  border-color: #b7dfc0;
+}
+
+.task-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: #4b5563;
+}
+
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-pending {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.task-meta,
+.task-description {
+  margin: 0;
+  color: var(--muted);
+}
+
+.task-description {
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+
+.empty-state,
+.form-message,
+.error-banner,
+.loading-state {
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.empty-state,
+.loading-state {
+  background: #faf4eb;
+  color: var(--muted);
+  text-align: center;
+}
+
+.form-message {
+  margin: 0;
+  background: #f6efe5;
+  color: var(--muted);
+}
+
+.error-banner {
+  margin-bottom: 14px;
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100% - 20px, 980px);
+    padding-top: 20px;
+  }
+
+  .hero-card,
+  .panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .task-topline {
+    flex-direction: column;
+  }
+}

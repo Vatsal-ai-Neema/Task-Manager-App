@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: task-manager-app
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
