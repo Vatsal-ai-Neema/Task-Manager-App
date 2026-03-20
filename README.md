@@ -148,7 +148,7 @@ Recommended quick deployment:
 1. Push the project to GitHub.
 2. Create a new Web Service on Render.
 3. Use:
-   - Build command: none
+   - Build command: `npm install`
    - Start command: `npm start`
 4. Deploy and open the generated public URL.
 
@@ -158,7 +158,7 @@ If Render asks for more details, use:
 
 - Runtime: `Node`
 - Root Directory: leave empty
-- Build Command: leave empty
+- Build Command: `npm install`
 - Start Command: `npm start`
 - Environment Variables: none required
 
