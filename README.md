@@ -167,4 +167,3 @@ If Render asks for more details, use:
 - Deployed project link
 - README/documentation
 - API endpoint list
-- Screenshots of UI
